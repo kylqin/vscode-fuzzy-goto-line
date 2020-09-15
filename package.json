@@ -1,7 +1,7 @@
 {
     "name": "fuzzy-goto-line",
     "displayName": "Fuzzy goto line",
-    "description": "Fuzzy goto line",
+    "description": "Goto line by fuzzy matching line text",
     "version": "0.9.0",
     "publisher": "kylqin",
     "license": "MIT",
@@ -28,14 +28,14 @@
                 {
                     "when": "!explorerResourceIsFolder",
                     "command": "extension.fuzzyGotoLine",
-                    "group": "4_filterLine@1"
+                    "group": "4_fuzzyGotoLine@1"
                 }
             ],
             "editor/title/context": [
                 {
                     "when": "!explorerResourceIsFolder",
                     "command": "extension.fuzzyGotoLine",
-                    "group": "4_filterLine@1"
+                    "group": "4_fuzzyGotoLine@1"
                 }
             ]
         },
