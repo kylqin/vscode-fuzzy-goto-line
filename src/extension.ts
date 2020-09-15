@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
       }));
       const quickPick = vscode.window.createQuickPick<vscode.QuickPickItem & { index: number }>();
 
-      quickPick.value = getHistory(context, 'd') as string;
+      quickPick.value = getHistory(context, '') as string;
       quickPick.items = choices;
       quickPick.onDidChangeValue((value: string) => {
         updateHistory(context, value)
