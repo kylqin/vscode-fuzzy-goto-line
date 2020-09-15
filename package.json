@@ -1,0 +1,81 @@
+{
+    "name": "fuzzy-goto-line",
+    "displayName": "Fuzzy goto line",
+    "description": "Fuzzy goto line",
+    "version": "0.9.0",
+    "publisher": "kylqin",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Formatters",
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.fuzzyGotoLine"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.fuzzyGotoLine",
+                "title": "Fuzzy goto line"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "when": "!explorerResourceIsFolder",
+                    "command": "extension.fuzzyGotoLine",
+                    "group": "4_filterLine@1"
+                }
+            ],
+            "editor/title/context": [
+                {
+                    "when": "!explorerResourceIsFolder",
+                    "command": "extension.fuzzyGotoLine",
+                    "group": "4_filterLine@1"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "Fuzzy goto line",
+            "properties": {
+                "fuzzy-goto-line.historySize": {
+                    "type": "integer",
+                    "default": 10,
+                    "minimum": 1,
+                    "maximum": 50,
+                    "scope": "application",
+                    "description": "fuzzy-goto-line history size"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^12.12.0",
+        "@types/vscode": "^1.32.0",
+        "tslint": "^6.1.3",
+        "typescript": "^4.0.2",
+        "vscode": "^1.1.37"
+    },
+    "icon": "images/icon.png",
+    "bugs": {
+        "url": "https://github.com/kylqin/vscode-fuzzy-goto-line/issues",
+        "email": "kylqin@tom.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kylqin/vscode-fuzzy-goto-line.git"
+    },
+    "homepage": "https://github.com/kylqin/vscode-fuzzy-goto-line"
+}
